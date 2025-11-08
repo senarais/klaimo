@@ -39,7 +39,13 @@ export default function Hero() {
       </div>
 
       {/* 🌫 Fade bawah */}
-      <div className="absolute bottom-0 left-0 w-full h-60 pointer-events-none bg-linear-to-t from-background-dark to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-60 pointer-events-none bg-linear-to-trom-background-dark to-transparent" />
+
+      {/* 🌫 Fade kiri */}
+      <div className="absolute top-0 left-0 w-20 h-full pointer-events-none bg-linear-to-r from-background-dark to-transparent" />
+
+      {/* 🌫 Fade kanan */}
+      <div className="absolute top-0 right-0 w-20 h-full pointer-events-none bg-linear-to-l from-background-dark to-transparent" />
     </section>
   );
 }

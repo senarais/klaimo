@@ -2,7 +2,7 @@ import "./globals.css";
 import type { ReactNode } from "react";
 import Head from "next/head";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Klaimo - Prediksi Akurasi Klaim BPJS Anda",
   description:
     "Klaimo adalah asisten AI yang membantu Anda memprediksi akurasi klaim JKN untuk mengurangi risiko penolakan.",
