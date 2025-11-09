@@ -1,6 +1,26 @@
 "use client";
 
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 export default function Testimonials() {
+  const settings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    focusOnSelect: true,
+    autoplay: false,
+    autoplaySpeed: 4000,
+    arrows: true,
+    dots: true,
+    responsive: [
+      { breakpoint: 1024, settings: { slidesToShow: 2 } },
+      { breakpoint: 640, settings: { slidesToShow: 1 } },
+    ],
+  };
+
   return (
     <section
       id="testimonials"
@@ -11,51 +31,48 @@ export default function Testimonials() {
         Apa Kata Pengguna Kami
       </h1>
       <p className="text-sm md:text-base text-muted-foreground mt-4 max-w-lg">
-        Bergabunglah dengan ribuan pengguna yang telah memprediksi klaim mereka dengan
-        lebih akurat menggunakan Klaimo.
+        Bergabunglah dengan ribuan pengguna yang telah memprediksi klaim mereka
+        dengan lebih akurat menggunakan Klaimo.
       </p>
 
       {/* 💬 Testimonials */}
-      <div
-        className="
-          grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
-          gap-6 mt-16
-          text-left
-          w-full
-        "
-      >
-        {testimonials.map((t, i) => (
-          <div
-            key={i}
-            className="
-              flex flex-col items-start
-              border border-border
-              p-4 sm:p-5
-              rounded-2xl
-              bg-card
-              shadow-sm hover:shadow-md
-              transition-all
-            "
-          >
-            <QuoteIcon />
+      <div className="w-full mt-16">
+        <Slider {...settings}>
+          {testimonials.map((t, i) => (
+            <div key={i} className="px-3">
+              <div
+                className="
+                  flex flex-col items-start
+                  border border-border
+                  p-5
+                  rounded-2xl
+                  bg-card
+                  shadow-sm hover:shadow-md
+                  transition-all duration-300
+                  h-full
+                "
+              >
+                <QuoteIcon />
+                <Stars />
+                <p className="text-sm mt-3 text-muted-foreground">{t.text}</p>
 
-            <Stars />
-
-            <p className="text-sm mt-3 text-muted-foreground">{t.text}</p>
-
-            <div className="flex items-center gap-3 mt-4">
-              <img
-                className="h-10 w-10 rounded-full object-cover"
-                src={t.image}
-                alt={`userImage${i}`}
-              />
-              <div>
-                <h2 className="text-base text-foreground font-medium">{t.name}</h2>
-                <p className="text-sm text-muted-foreground">{t.role}</p>
+                <div className="flex items-center gap-3 mt-4">
+                  <img
+                    className="h-10 w-10 rounded-full object-cover"
+                    src={t.image}
+                    alt={`userImage${i}`}
+                  />
+                  <div>
+                    <h2 className="text-base text-foreground font-medium">
+                      {t.name}
+                    </h2>
+                    <p className="text-sm text-muted-foreground">{t.role}</p>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </Slider>
       </div>
     </section>
   );
@@ -83,6 +100,27 @@ const testimonials = [
       "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100",
     name: "James Washington",
     role: "Analis Data",
+  },
+  {
+    text: "Klaimo bikin kerjaan saya di rumah sakit jadi lebih efisien, terutama waktu verifikasi klaim.",
+    image:
+      "https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=100",
+    name: "Diana Hope",
+    role: "Staf Verifikator Klaim",
+  },
+  {
+    text: "Rekomendasi banget buat instansi kesehatan. Sistemnya intuitif dan gampang dipakai semua umur.",
+    image:
+      "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=100",
+    name: "Michael Stone",
+    role: "Manajer Faskes",
+  },
+  {
+    text: "Dari segi akurasi prediksi klaim, Klaimo ngasih insight yang sangat membantu buat analisis internal.",
+    image:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100",
+    name: "Sarah Lewis",
+    role: "Auditor BPJS",
   },
 ];
 
