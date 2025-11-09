@@ -5,6 +5,8 @@ import Features from "./components/Features";
 import UseCases from "./components/UseCases";
 import Cta from "./components/Cta";
 import Footer from "./components/Footer";
+import Testimonials from "./components/Testimontials";
+import FaqSection from "./components/Faq";
 
 export default function Page() {
   return (
@@ -16,6 +18,8 @@ export default function Page() {
         <Steps />
         <Features />
         <UseCases />
+        <Testimonials />
+        <FaqSection />
         <Cta />
       </main>
       <Footer />

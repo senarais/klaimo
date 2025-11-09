@@ -9,7 +9,7 @@ export default function Header() {
         <h2 className="text-lg font-semibold">Klaimo</h2>
       </div>
       <a
-        href="#cta"
+        href="/analyze"
         className="flex h-10 px-4 items-center justify-center rounded-lg bg-primary text-background-dark text-sm font-bold hover:opacity-90 transition-opacity"
       >
         Mulai Analisis Gratis
